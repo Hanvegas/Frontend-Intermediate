@@ -1,7 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 const Navbar = () => {
+      const navigate = useNavigate()
       const [isOpen, setIsOpen] = useState()
+
+      const logoutButton = () => {
+            localStorage.removeItem("username")
+            localStorage.removeItem("password")
+            navigate('/login')
+      }
+
       return (
             <nav className='relative flex justify-between items-center w-full p-5 lg:px-20 lg:py-[34.5px] bg-[rgba(24,26,28,1)]'>
                   <ul className='flex items-center text-white text-[10px] lg:text-lg font-medium'>
@@ -45,7 +55,7 @@ const Navbar = () => {
                                           <svg viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className='w-[16px] lg:w-[24px]'>
                                                 <path d="M12.6667 2H3.33333C2.59333 2 2 2.59333 2 3.33333V6H3.33333V3.33333H12.6667V12.6667H3.33333V10H2V12.6667C2 13.0203 2.14048 13.3594 2.39052 13.6095C2.64057 13.8595 2.97971 14 3.33333 14H12.6667C13.0203 14 13.3594 13.8595 13.6095 13.6095C13.8595 13.3594 14 13.0203 14 12.6667V3.33333C14 2.59333 13.4 2 12.6667 2ZM6.72 10.3867L7.66667 11.3333L11 8L7.66667 4.66667L6.72 5.60667L8.44667 7.33333H2V8.66667H8.44667L6.72 10.3867Z" />
                                           </svg>
-                                          <a href='#' className='ml-1 text-[10px] lg:text-sm font-medium'>Keluar</a>
+                                          <button onClick={logoutButton} className='ml-1 text-[10px] lg:text-sm font-medium'>Keluar</button>
                                     </li>
                               </ul>
                         ) : null}

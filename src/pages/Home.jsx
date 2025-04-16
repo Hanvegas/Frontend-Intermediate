@@ -19,7 +19,7 @@ const Home = () => {
 
       return (
             <>
-                  <header className='sticky top-0 z-10'>
+                  <header className='sticky top-0 z-20'>
                         <Navbar />
                   </header>
                   <main>
