@@ -8,7 +8,7 @@ import TopTen from '../InfoMovie/TopTen'
 
 const HistoryCardDesktop = ({ data, title, noId }) => {
       return (
-            <div className='py-10 px-20'>
+            <section className='py-10 px-20'>
                   <h3 className='mb-8 text-3xl font-bold text-white'>{title}</h3>
                   <div className='relative w-full'>
                         <button id={`prev-btn-${noId}`} className='absolute top-2/5 sm:-left-4 lg:-left-5 z-10'>
@@ -51,7 +51,7 @@ const HistoryCardDesktop = ({ data, title, noId }) => {
                               })}
                         </Swiper>
                   </div>
-            </div>
+            </section>
       )
 }
 

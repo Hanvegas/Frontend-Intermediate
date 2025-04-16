@@ -25,16 +25,18 @@ const Home = () => {
                   <main>
                         <HeroSection />
                         {isMobile && <HistoryCardMobile data={historyWatch} title={"Melanjutkan Tonton Film"} />}
-                        {isDesktop && <HistoryCardDesktop data={historyWatch} title={"Melanjutkan Nonton Film"} noId={1}/>}
+                        {isDesktop && <HistoryCardDesktop data={historyWatch} title={"Melanjutkan Nonton Film"} noId={1} />}
                         {isMobile && <FilmCardMobile data={topRating} title={"Top Rating Film & Series Hari ini"} />}
                         {isDesktop && <FilmCardDesktop data={topRating} title={"Top Rating Film & Series Hari ini"} noId={1} />}
                         {isMobile && <FilmCardMobile data={trendingFilm} title={"Trending Film"} />}
                         {isDesktop && <FilmCardDesktop data={trendingFilm} title={"Trending Film"} noId={2} />}
-                        {isMobile && <FilmCardMobile data={newRelease} title={"Rilis Baru"} /> }
+                        {isMobile && <FilmCardMobile data={newRelease} title={"Rilis Baru"} />}
                         {isDesktop && <FilmCardDesktop data={newRelease} title={"Rilis Baru"} noId={3} />}
+                  </main>
+                  <footer>
                         {isMobile && <FooterMobile />}
                         {isDesktop && <FooterDesktop />}
-                  </main>
+                  </footer>
             </>
       )
 }
