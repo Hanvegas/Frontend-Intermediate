@@ -1,5 +1,5 @@
 import React from 'react'
-import watchList from '../../../seeds/WatchList'
+import watchList from '../../../seeds/watchList'
 import TopTen from '../InfoMovie/TopTen'
 import NewEpisode from '../InfoMovie/NewEpisode'
 
