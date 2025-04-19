@@ -33,7 +33,7 @@ const FilmCardDesktop = ({ data, title, noId }) => {
                               {data.map((movie, index) => {
                                     return (
                                           <SwiperSlide key={index} className='hover:scale-105 transition-transform duration-300 z-50 cursor-pointer'>
-                                                <img src={movie.image} alt={movie.title} className='w-full h-full' />
+                                                <img src={movie.image} alt={movie.title} className='w-full h-full rounded-xl' />
                                                 <div className='absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.3)] to-transparent'></div>
                                                 {movie.newEpisode && <NewEpisode />}
                                                 {movie.topTen && <TopTen />}

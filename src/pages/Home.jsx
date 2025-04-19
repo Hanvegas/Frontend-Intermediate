@@ -1,4 +1,3 @@
-import React from 'react'
 import { useMediaQuery } from 'react-responsive'
 import Navbar from '../components/Navbar'
 import HeroSection from '../components/HeroSection'
@@ -6,17 +5,16 @@ import HistoryCardMobile from '../components/Movie/HistoryCard/HistoryCardMobile
 import HistoryCardDesktop from '../components/Movie/HistoryCard/HistoryCardDesktop'
 import FilmCardMobile from '../components/Movie/FilmCard/FilmCardMobile'
 import historyWatch from '../seeds/historyWatch'
-import topRating from '../seeds/topRating'
-import trendingFilm from '../seeds/trendingFilm'
-import newRelease from '../seeds/newRelease'
 import FooterMobile from '../components/Footer/FooterMobile'
 import FooterDesktop from '../components/Footer/FooterDesktop'
 import FilmCardDesktop from '../components/Movie/FilmCard/FilmCardDesktop'
+import useChillData from '../hooks/useChillData'
 
 const Home = () => {
+      const {topRating, trending} = useChillData()
+
       const isMobile = useMediaQuery({ maxWidth: 1023 })
       const isDesktop = useMediaQuery({ minWidth: 1024 })
-
       return (
             <>
                   <header className='sticky top-0 z-20'>
@@ -25,13 +23,13 @@ const Home = () => {
                   <main>
                         <HeroSection />
                         {isMobile && <HistoryCardMobile data={historyWatch} title={"Melanjutkan Tonton Film"} />}
-                        {isDesktop && <HistoryCardDesktop data={historyWatch} title={"Melanjutkan Nonton Film"} noId={1} />}
                         {isMobile && <FilmCardMobile data={topRating} title={"Top Rating Film & Series Hari ini"} />}
+                        {isMobile && <FilmCardMobile data={trending} title={"Trending Film"} />}
+                        {isMobile && <FilmCardMobile data={topRating} title={"Rilis Baru"} />}
+                        {isDesktop && <HistoryCardDesktop data={historyWatch} title={"Melanjutkan Nonton Film"} noId={1} />}
                         {isDesktop && <FilmCardDesktop data={topRating} title={"Top Rating Film & Series Hari ini"} noId={1} />}
-                        {isMobile && <FilmCardMobile data={trendingFilm} title={"Trending Film"} />}
-                        {isDesktop && <FilmCardDesktop data={trendingFilm} title={"Trending Film"} noId={2} />}
-                        {isMobile && <FilmCardMobile data={newRelease} title={"Rilis Baru"} />}
-                        {isDesktop && <FilmCardDesktop data={newRelease} title={"Rilis Baru"} noId={3} />}
+                        {isDesktop && <FilmCardDesktop data={trending} title={"Trending Film"} noId={2} />}
+                        {isDesktop && <FilmCardDesktop data={topRating} title={"Rilis Baru"} noId={3} />}
                   </main>
                   <footer>
                         {isMobile && <FooterMobile />}
