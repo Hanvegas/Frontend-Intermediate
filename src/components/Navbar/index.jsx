@@ -22,23 +22,25 @@ const Navbar = () => {
                               </a>
                         </li>
                         <li className='mr-3 lg:mr-20'>
-                              <a href='/series'>Series</a>
+                              <a href='#'>Series</a>
                         </li>
                         <li className='mr-3 lg:mr-20'>
-                              <a href='/film'>Film</a>
+                              <a href='/#'>Film</a>
                         </li>
                         <li className='mr-3 lg:mr-20'>
-                              <a href='/daftar-saya'>Daftar Saya</a>
+                              <a href='/#'>Daftar Saya</a>
+                        </li>
+                        <li className='mr-3 lg:mr-20'>
+                              <a href='/crud'>CRUD</a>
                         </li>
                   </ul>
-
                   <div className='relative flex'>
                         <div className='w-[20px] mr-1 lg:w-[40px] lg:mr-2'>
                               <img src='/icon/profile.svg' alt='profile' className='w-full' />
                         </div>
                         <button onClick={() => setIsOpen(!isOpen)} className='relative cursor-pointer z-1' ><img src='/icon/arrow-down.svg' alt='arrow-down' className='w-[16px] lg:w-[28px]' /></button>
                         {isOpen ? (
-                              <ul className='absolute top-5 lg:top-15 right-0 lg:-right-15 flex flex-col min-w-[113px] lg:min-w-[156px] py-1 text-white bg-[rgba(24,26,28,1)] rounded'>
+                              <ul className='absolute top-5 lg:top-15 right-0 lg:-right-15 z-10 flex flex-col min-w-[113px] lg:min-w-[156px] py-1 text-white bg-[rgba(24,26,28,1)] rounded'>
                                     <li className='flex items-center py-2 px-3 text-white hover:text-[rgba(50,84,255,1)]'>
                                           <svg viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className='w-[16px] lg:w-[24px]'>
                                                 <path d="M7.99984 2.66675C8.70708 2.66675 9.38536 2.9477 9.88546 3.4478C10.3856 3.94789 10.6665 4.62617 10.6665 5.33341C10.6665 6.04066 10.3856 6.71894 9.88546 7.21903C9.38536 7.71913 8.70708 8.00008 7.99984 8.00008C7.29259 8.00008 6.61432 7.71913 6.11422 7.21903C5.61412 6.71894 5.33317 6.04066 5.33317 5.33341C5.33317 4.62617 5.61412 3.94789 6.11422 3.4478C6.61432 2.9477 7.29259 2.66675 7.99984 2.66675ZM7.99984 9.33342C10.9465 9.33342 13.3332 10.5267 13.3332 12.0001V13.3334H2.6665V12.0001C2.6665 10.5267 5.05317 9.33342 7.99984 9.33342Z" />

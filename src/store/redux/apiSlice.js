@@ -7,7 +7,7 @@ const apiSlice = createSlice({
             trending: []
       },
       reducers: {
-            setTopTrending: (state, action) => {
+            setTopRating: (state, action) => {
                   state.topRating = action.payload
             },
             setTrending: (state, action) => {
@@ -16,5 +16,5 @@ const apiSlice = createSlice({
       }
 })
 
-export const { setTopTrending, setTrending } = apiSlice.actions
+export const { setTopRating, setTrending } = apiSlice.actions
 export default apiSlice.reducer
